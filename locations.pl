@@ -20,4 +20,11 @@ lugar(uno_los_proceres).
 lugar(uno_monumental).
 lugar(puma_los_proceres).
 
+%% Parques, eco centros o centros deportivos 
+lugar(cancah_emiliani).
+lugar(parque_lomas_de_san_francisco).
+lugar(parque_bicentenario).
+lugar(parque_central_antiguo_cuscatlan).
+lugar(estadio_cuscatlan).
+
 
