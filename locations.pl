@@ -27,4 +27,11 @@ lugar(parque_bicentenario).
 lugar(parque_central_antiguo_cuscatlan).
 lugar(estadio_cuscatlan).
 
+%% Centros comerciales
+lugar(multiplaza).
+lugar(centro_comercial_las_cascadas).
+lugar(la_gran_via).
+lugar(plaza_tunal).
+lugar(centro_comercial_jardines).
+
 
