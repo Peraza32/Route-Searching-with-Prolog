@@ -13,5 +13,11 @@ lugar(analiza_laboratio_clinico).
 lugar(bioinnova).
 lugar(hospital_el_salvador).
 
+%% Gasolineras
+lugar(uno_la_sultana).
+lugar(uno_las_lomas).
+lugar(uno_los_proceres).
+lugar(uno_monumental).
+lugar(puma_los_proceres).
 
 
