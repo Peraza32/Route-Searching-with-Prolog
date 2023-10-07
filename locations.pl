@@ -34,4 +34,34 @@ lugar(la_gran_via).
 lugar(plaza_tunal).
 lugar(centro_comercial_jardines).
 
+%% Calles y segmentos de calle 
+
+%% Calle cantabrico, 6 partes
+calles(calle_cantabrico_s1).
+calles(calle_cantabrico_s2).
+calles(calle_cantabrico_s3).
+calles(calle_cantabrico_s4).
+calles(calle_cantabrico_s5).
+calles(calle_cantabrico_s6).
+
+%% Calle Mediterraneo, 14 secciones
+calles(calle_mediterraneo_s1).
+calles(calle_mediterraneo_s2).
+calles(calle_mediterraneo_s3).
+calles(calle_mediterraneo_s4).
+calles(calle_mediterraneo_s5).
+calles(calle_mediterraneo_s6).
+calles(calle_mediterraneo_s7).
+calles(calle_mediterraneo_s8).
+calles(calle_mediterraneo_s9).
+calles(calle_mediterraneo_s10).
+calles(calle_mediterraneo_s11).
+calles(calle_mediterraneo_s12).
+calles(calle_mediterraneo_s13).
+calles(calle_mediterraneo_s14).
+
+%% Avenida Albert Einstein, 1 seccion
+calles(avenida_albert_einstein_s1).
+
+
 
