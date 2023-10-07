@@ -44,7 +44,7 @@ calles(calle_cantabrico_s4).
 calles(calle_cantabrico_s5).
 calles(calle_cantabrico_s6).
 
-%% Calle Mediterraneo, 15 secciones
+%% Calle Mediterraneo, 16 secciones
 calles(calle_mediterraneo_s1).
 calles(calle_mediterraneo_s2).
 calles(calle_mediterraneo_s3).
@@ -60,9 +60,13 @@ calles(calle_mediterraneo_s12).
 calles(calle_mediterraneo_s13).
 calles(calle_mediterraneo_s14).
 calles(calle_mediterraneo_s15).
+calles(calle_mediterraneo_s16).
 
-%% Avenida Albert Einstein, 1 seccion
+%% Avenida Albert Einstein, 4 seccion
 calles(avenida_albert_einstein_s1).
+calles(avenida_albert_einstein_s2).
+calles(avenida_albert_einstein_s3).
+calles(avenida_albert_einstein_s4).
 
 %% Boulevard La Sultana, 5 secciones
 calles(boulevard_la_sultana_s1).
@@ -75,3 +79,23 @@ calles(boulevard_la_sultana_s5).
 calles(avenida_las_palmeras_s1).
 calles(avenida_las_palmeras_s2).
 calles(avenida_las_palmeras_s3).
+
+%% 1ra Avenida Norte, 1 seccion
+calles(primera_avenida_norte_s1).
+
+%% 3 Avenida Norte, 5 secciones
+calles(tercera_avenida_norte_s1).
+calles(tercera_avenida_norte_s2).
+calles(tercera_avenida_norte_s3).
+calles(tercera_avenida_norte_s4).
+calles(tercera_avenida_norte_s5).
+
+%% 1 Calle Oriente, 5 secciones
+calles(primera_calle_oriente_s1).
+calles(primera_calle_oriente_s2).
+calles(primera_calle_oriente_s3).
+calles(primera_calle_oriente_s4).
+calles(primera_calle_oriente_s5).
+
+%% 1 Calle Poniente, 1 seccion
+calles(primera_calle_poniente_s1).
