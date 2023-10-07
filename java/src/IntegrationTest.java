@@ -7,7 +7,7 @@ public class IntegrationTest {
 		Query q1 = 
 			    new Query( 
 				"consult", 
-				new Term[] {new Atom("C:\\Users\\gilbe\\Desktop\\UCA\\ciclo-02-2023\\programacion-declarativa\\primer-proyecto\\Route-Searching-with-Prolog\\prolog\\locations.pl")} 
+				new Term[] {new Atom("")} //Change with your route for the locations.pl file
 			    );
 	
 		System.out.println( "consult " + (q1.hasSolution() ? "succeeded" : "failed"));
