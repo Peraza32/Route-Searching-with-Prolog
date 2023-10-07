@@ -21,7 +21,7 @@ lugar(uno_monumental).
 lugar(puma_los_proceres).
 
 %% Parques, eco centros o centros deportivos 
-lugar(cancah_emiliani).
+lugar(cancha_emiliani).
 lugar(parque_lomas_de_san_francisco).
 lugar(parque_bicentenario).
 lugar(parque_central_antiguo_cuscatlan).
@@ -44,7 +44,7 @@ calles(calle_cantabrico_s4).
 calles(calle_cantabrico_s5).
 calles(calle_cantabrico_s6).
 
-%% Calle Mediterraneo, 14 secciones
+%% Calle Mediterraneo, 15 secciones
 calles(calle_mediterraneo_s1).
 calles(calle_mediterraneo_s2).
 calles(calle_mediterraneo_s3).
@@ -59,9 +59,19 @@ calles(calle_mediterraneo_s11).
 calles(calle_mediterraneo_s12).
 calles(calle_mediterraneo_s13).
 calles(calle_mediterraneo_s14).
+calles(calle_mediterraneo_s15).
 
 %% Avenida Albert Einstein, 1 seccion
 calles(avenida_albert_einstein_s1).
 
+%% Boulevard La Sultana, 5 secciones
+calles(boulevard_la_sultana_s1).
+calles(boulevard_la_sultana_s2).
+calles(boulevard_la_sultana_s3).
+calles(boulevard_la_sultana_s4).
+calles(boulevard_la_sultana_s5).
 
-
+%% Avenida Las Palmeras, 3 secciones
+calles(avenida_las_palmeras_s1).
+calles(avenida_las_palmeras_s2).
+calles(avenida_las_palmeras_s3).
