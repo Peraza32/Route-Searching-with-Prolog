@@ -147,3 +147,14 @@ calles(calle_los_viveros_s1).
 
 %% Calle Los Estadi, 1 seccion
 calles(calle_los_estadi_s1).
+
+%% TODO: asigar las coordenadas
+%% Coordenadas de los lugares, x, y
+%% Instituciones educativas
+%% centros de salud
+%% gasolineras
+%% parques, eco centros o centros deportivos
+%% centros comerciales
+%% calles y segmentos de calle
+
+
