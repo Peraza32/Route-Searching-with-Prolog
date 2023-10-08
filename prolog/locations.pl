@@ -262,8 +262,8 @@ conecta(parque_bicentenario,boulevard_monsenor_romero_s4).
 conecta(boulevard_monsenor_romero_s4, parque_bicentenario).
 
 %% Parque Central Antiguo Cuscatlan
-conecta(parque_central_antiguo_cuscatlan, tercera_avenida_norte_s5).
-conecta(tercera_avenida_norte_s5, parque_central_antiguo_cuscatlan).
+conecta(parque_central_antiguo_cuscatlan, tercera_avenida_norte_s3).
+conecta(tercera_avenida_norte_s3, parque_central_antiguo_cuscatlan).
 conecta(parque_central_antiguo_cuscatlan, boulevard_walter_thilo_deininger_s1).
 conecta(boulevard_walter_thilo_deininger_s1, parque_central_antiguo_cuscatlan).
 
@@ -438,6 +438,45 @@ conecta(tercera_avenida_norte_s2, tercera_avenida_norte_s3).
 conecta(tercera_avenida_norte_s2, tercera_avenida_norte_s1).
 conecta(tercera_avenida_norte_s3, tercera_avenida_norte_s2).
 
-
 % uniones
 conecta(tercera_avenida_norte_s3,boulevard_walter_thilo_deininger_s1).
+
+%% 1 Calle Oriente
+conecta(primera_calle_oriente_s1, primera_calle_oriente_s2).
+conecta(primera_calle_oriente_s2, primera_calle_oriente_s3).
+conecta(primera_calle_oriente_s3, primera_calle_oriente_s4).
+conecta(primera_calle_oriente_s4, primera_calle_oriente_s5).
+
+% uniones 
+conecta(primera_calle_oriente_s4,avenida_rio_amazonas_s1).
+conecta(avenida_rio_amazonas_s1, primera_calle_oriente_s4).
+
+conecta(primera_calle_oriente_s5,primera_calle_poniente_s1).
+
+%% 1 Calle Poniente
+conecta(primera_calle_poniente_s1, tercera_avenida_norte_s3).
+
+%% Boulevard Walter Thilo Deininger
+conecta(boulevard_walter_thilo_deininger_s1, boulevard_walter_thilo_deininger_s2).
+conecta(boulevard_walter_thilo_deininger_s2, boulevard_walter_thilo_deininger_s3).
+conecta(boulevard_walter_thilo_deininger_s3, boulevard_walter_thilo_deininger_s4).
+conecta(boulevard_walter_thilo_deininger_s4, boulevard_walter_thilo_deininger_s5).
+conecta(boulevard_walter_thilo_deininger_s5, boulevard_walter_thilo_deininger_s6).
+conecta(boulevard_walter_thilo_deininger_s5, boulevard_walter_thilo_deininger_s7).
+
+conecta(boulevard_walter_thilo_deininger_s2, boulevard_walter_thilo_deininger_s1).
+conecta(boulevard_walter_thilo_deininger_s3, boulevard_walter_thilo_deininger_s2).
+conecta(boulevard_walter_thilo_deininger_s4, boulevard_walter_thilo_deininger_s3).
+conecta(boulevard_walter_thilo_deininger_s5, boulevard_walter_thilo_deininger_s4).
+conecta(boulevard_walter_thilo_deininger_s6, boulevard_walter_thilo_deininger_s5).
+conecta(boulevard_walter_thilo_deininger_s7, boulevard_walter_thilo_deininger_s5).
+
+% uniones
+conecta(boulevard_walter_thilo_deininger_s5, calle_antigua_ferrocaril_s2).
+conecta(calle_antigua_ferrocaril_s2, boulevard_walter_thilo_deininger_s5).
+
+conecta(boulevard_walter_thilo_deininger_s7, carretera_panamericana_s3).
+
+%% Calle Cuscatlan Poniente
+
+%% Carretera Panamericana
