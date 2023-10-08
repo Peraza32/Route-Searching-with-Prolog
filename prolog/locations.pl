@@ -480,3 +480,31 @@ conecta(boulevard_walter_thilo_deininger_s7, carretera_panamericana_s3).
 %% Calle Cuscatlan Poniente
 
 %% Carretera Panamericana
+% un solo sentido
+conecta(carretera_panamericana_s3,carretera_panamericana_s1).
+conecta(carretera_panamericana_s2,carretera_panamericana_s3).
+conecta(carretera_panamericana_s11,carretera_panamericana_s14).
+conecta(carretera_panamericana_s14,carretera_panamericana_s13).
+conecta(carretera_panamericana_s13,carretera_panamericana_s9).
+conecta(carretera_panamericana_s9,carretera_panamericana_s4).
+conecta(carretera_panamericana_s7,carretera_panamericana_s4).
+conecta(carretera_panamericana_s8,carretera_panamericana_s10).
+
+% doble sentido
+conecta(carretera_panamericana_s3,carretera_panamericana_s5).
+conecta(carretera_panamericana_s5,carretera_panamericana_s6).
+conecta(carretera_panamericana_s6,carretera_panamericana_s10).
+conecta(carretera_panamericana_s10,carretera_panamericana_s11).
+conecta(carretera_panamericana_s11,carretera_panamericana_s12).
+conecta(carretera_panamericana_s12,carretera_panamericana_s13).
+
+conecta(carretera_panamericana_s12,carretera_panamericana_s11).
+conecta(carretera_panamericana_s11,carretera_panamericana_s10).
+conecta(carretera_panamericana_s10,carretera_panamericana_s6).
+conecta(carretera_panamericana_s6,carretera_panamericana_s5).
+conecta(carretera_panamericana_s5,carretera_panamericana_s3).
+conecta(carretera_panamericana_s13,carretera_panamericana_s12).
+
+% uniones 
+conecta(carretera_panamericana_s9, boulevard_walter_thilo_deininger_s6).
+conecta(carretera_panamericana_s1,boulevard_monsenor_romero_s3).
