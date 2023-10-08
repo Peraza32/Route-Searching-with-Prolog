@@ -85,12 +85,16 @@ calles(avenida_las_palmeras_s3).
 %% 1ra Avenida Norte, 1 seccion
 calles(primera_avenida_norte_s1).
 
-%% 3 Avenida Norte, 5 secciones
+%% Avenida Antiguo Cuscatlan, 3 secciones
+calles(avenida_antiguo_cuscatlan_s1).
+calles(avenida_antiguo_cuscatlan_s2).
+calles(avenida_antiguo_cuscatlan_s3).
+
+%% 3 Avenida Norte, 3 secciones
 calles(tercera_avenida_norte_s1).
 calles(tercera_avenida_norte_s2).
 calles(tercera_avenida_norte_s3).
-calles(tercera_avenida_norte_s4).
-calles(tercera_avenida_norte_s5).
+
 
 %% 1 Calle Oriente, 5 secciones
 calles(primera_calle_oriente_s1).
@@ -393,3 +397,47 @@ conecta(boulevard_la_sultana_s5, boulevard_la_sultana_s4).
 % uniones
 conecta(boulevard_la_sultana_s5,boulevard_los_proceres_s5).
 conecta(boulevard_los_proceres_s5, boulevard_la_sultana_s5).
+
+%% Avenida Las Palmeras
+conecta(avenida_las_palmeras_s1, avenida_las_palmeras_s2).
+conecta(avenida_las_palmeras_s2, avenida_las_palmeras_s3).
+
+conecta(avenida_las_palmeras_s2, avenida_las_palmeras_s1).
+conecta(avenida_las_palmeras_s3, avenida_las_palmeras_s2).
+
+% uniones 
+conecta(avenida_las_palmeras_s1,calle_antigua_ferrocaril_s1).
+conecta(calle_antigua_ferrocaril_s1, avenida_las_palmeras_s1).
+
+conecta(avenida_las_palmeras_s3,boulevard_walter_thilo_deininger_s3).
+conecta(boulevard_walter_thilo_deininger_s3, avenida_las_palmeras_s3).
+
+%% 1ra Avenida Norte
+conecta(primera_avenida_norte_s1, primera_calle_poniente_s1).
+conecta(calle_cuscatlan_poniente_s1, primera_avenida_norte_s1).
+
+%% Avenida Antiguo Cuscatlan
+conecta(avenida_antiguo_cuscatlan_s1, avenida_antiguo_cuscatlan_s2).
+conecta(avenida_antiguo_cuscatlan_s2, avenida_antiguo_cuscatlan_s3).
+
+conecta(avenida_antiguo_cuscatlan_s2, avenida_antiguo_cuscatlan_s1).
+conecta(avenida_antiguo_cuscatlan_s3, avenida_antiguo_cuscatlan_s2).
+
+% uniones
+
+conecta(avenida_antiguo_cuscatlan_s1,calle_mediterraneo_s8).
+conecta(calle_mediterraneo_s8, avenida_antiguo_cuscatlan_s1).
+
+conecta(avenida_antiguo_cuscatlan_s3, tercera_avenida_norte_s1).
+
+
+%% 3 Avenida Norte
+conecta(tercera_avenida_norte_s1, tercera_avenida_norte_s2).
+conecta(tercera_avenida_norte_s2, tercera_avenida_norte_s3).
+
+conecta(tercera_avenida_norte_s2, tercera_avenida_norte_s1).
+conecta(tercera_avenida_norte_s3, tercera_avenida_norte_s2).
+
+
+% uniones
+conecta(tercera_avenida_norte_s3,boulevard_walter_thilo_deininger_s1).
