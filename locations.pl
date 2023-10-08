@@ -11,7 +11,7 @@ lugar(instituto_salvadoreño_del_seguro_social).
 lugar(farmacia_economica_la_sultana).
 lugar(analiza_laboratio_clinico).
 lugar(bioinnova).
-lugar(hospital_el_salvador).
+lugar(cruz_verde_antiguo_cuscatlan).
 
 %% Gasolineras
 lugar(uno_la_sultana).
@@ -99,3 +99,50 @@ calles(primera_calle_oriente_s5).
 
 %% 1 Calle Poniente, 1 seccion
 calles(primera_calle_poniente_s1).
+
+%% Boulevard Walter Thilo Deininger, 6 secciones
+calles(boulevard_walter_thilo_deininger_s1).
+calles(boulevard_walter_thilo_deininger_s2).
+calles(boulevard_walter_thilo_deininger_s3).
+calles(boulevard_walter_thilo_deininger_s4).
+calles(boulevard_walter_thilo_deininger_s5).
+calles(boulevard_walter_thilo_deininger_s6).
+
+%% Calle Cuscatlan Poniente, 1 seccion
+calles(calle_cuscatlan_poniente_s1).
+
+%% Carretera Panamericana, 12 secciones
+calles(carretera_panamericana_s1).
+calles(carretera_panamericana_s2).
+calles(carretera_panamericana_s3).
+calles(carretera_panamericana_s4).
+calles(carretera_panamericana_s5).
+calles(carretera_panamericana_s6).
+calles(carretera_panamericana_s7).
+calles(carretera_panamericana_s8).
+calles(carretera_panamericana_s9).
+calles(carretera_panamericana_s10).
+calles(carretera_panamericana_s11).
+calles(carretera_panamericana_s12).
+
+%% Boulevard los Proceres, 4 secciones
+calles(boulevard_los_proceres_s1).
+calles(boulevard_los_proceres_s2).
+calles(boulevard_los_proceres_s3).
+calles(boulevard_los_proceres_s4).
+
+%% Boulevard Monsenor Romero, 5 secciones
+calles(boulevard_monsenor_romero_s1).
+calles(boulevard_monsenor_romero_s2).
+calles(boulevard_monsenor_romero_s3).
+calles(boulevard_monsenor_romero_s4).
+calles(boulevard_monsenor_romero_s5).
+
+%% Boulevard Altamira, 1 seccion
+calles(boulevard_altamira_s1).
+
+%% Calle Los Viveros, 1 seccion
+calles(calle_los_viveros_s1).
+
+%% Calle Los Estadi, 1 seccion
+calles(calle_los_estadi_s1).
