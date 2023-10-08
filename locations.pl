@@ -132,12 +132,12 @@ calles(boulevard_los_proceres_s2).
 calles(boulevard_los_proceres_s3).
 calles(boulevard_los_proceres_s4).
 
-%% Boulevard Monsenor Romero, 5 secciones
+%% Boulevard Monsenor Romero, 4 secciones
 calles(boulevard_monsenor_romero_s1).
 calles(boulevard_monsenor_romero_s2).
 calles(boulevard_monsenor_romero_s3).
 calles(boulevard_monsenor_romero_s4).
-calles(boulevard_monsenor_romero_s5).
+
 
 %% Boulevard Altamira, 1 seccion
 calles(boulevard_altamira_s1).
@@ -147,6 +147,13 @@ calles(calle_los_viveros_s1).
 
 %% Calle Los Estadi, 1 seccion
 calles(calle_los_estadi_s1).
+
+%% Calle Antigua Ferrocaril, 2 secciones
+calles(calle_antigua_ferrocaril_s1).
+calles(calle_antigua_ferrocaril_s2).
+
+%% Calle San Jeronimo Emiliani, 1 seccion
+calles(calle_san_jeronimo_emiliani_s1).
 
 %% TODO: asigar las coordenadas
 %% Coordenadas de los lugares, x, y
@@ -158,3 +165,33 @@ calles(calle_los_estadi_s1).
 %% calles y segmentos de calle
 
 
+%% Conexiones entre los lugares y calles
+%% Instituciones educativas
+%% UCA 
+conecta(uca, calle_cantabrico_s4).
+conecta(uca, boulevard_la_sultana_s3).
+conecta(uca, boulevard_los_proceres_s4).
+conecta(calle_cantabrico_s4, uca).
+conecta(boulevard_la_sultana_s3, uca).
+conecta(boulevard_los_proceres_s4, uca).
+
+%% Escuela Alemana
+conecta(escuela_alemana,calle_mediterraneo_s9).
+conecta(calle_mediterraneo_s9, escuela_alemana).
+
+%% Instituto Hermanas Somascas
+conecta(instituto_hermanas_somascas, calle_mediterraneo_s13).
+conecta(calle_mediterraneo_s13, instituto_hermanas_somascas).
+
+%% Instituto Tecnico Emiliani
+conecta(instituto_tecnico_emiliani, carretera_panamericana_s3).
+conecta(carretera_panamericana_s3, instituto_tecnico_emiliani).
+
+%% Colegio Augusto Walte
+conecta(colegio_augusto_walte, calle_san_jeronimo_emiliani_s1).
+conecta(calle_san_jeronimo_emiliani_s1, colegio_augusto_walte).
+
+%% Centros de Salud
+%% Instituto Salvadoreno del Seguro Social
+conecta(instituto_salvadoreno_del_seguro_social, boulevard_monsenor_romero_s3).
+conecta(boulevard_monsenor_romero_s3, instituto_salvadoreno_del_seguro_social).
