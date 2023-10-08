@@ -366,3 +366,15 @@ conecta(boulevard_la_sultana_s1, calle_mediterraneo_s12).
 
 %% Avenida Albert Einstein
 conecta(avenida_albert_einstein_s1, avenida_albert_einstein_s2).
+conecta(avenida_albert_einstein_s3, avenida_albert_einstein_s4).
+conecta(avenida_albert_einstein_s4, avenida_albert_einstein_s5).
+
+
+conecta(avenida_albert_einstein_s2, avenida_albert_einstein_s1).
+conecta(avenida_albert_einstein_s4, avenida_albert_einstein_s3).
+conecta(avenida_albert_einstein_s5, avenida_albert_einstein_s4).
+
+
+% uniones
+conecta(avenida_albert_einstein_s5,primera_calle_oriente_s1).
+conecta(primera_calle_oriente_s1, avenida_albert_einstein_s5).
