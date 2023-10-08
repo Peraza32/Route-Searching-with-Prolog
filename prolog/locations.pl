@@ -508,3 +508,44 @@ conecta(carretera_panamericana_s13,carretera_panamericana_s12).
 % uniones 
 conecta(carretera_panamericana_s9, boulevard_walter_thilo_deininger_s6).
 conecta(carretera_panamericana_s1,boulevard_monsenor_romero_s3).
+
+%% Boulevard los Proceres
+conecta(boulevard_los_proceres_s1, boulevard_los_proceres_s2).
+conecta(boulevard_los_proceres_s2, boulevard_los_proceres_s3).
+conecta(boulevard_los_proceres_s2, boulevard_los_proceres_s4).
+conecta(boulevard_los_proceres_s4, boulevard_los_proceres_s5).
+conecta(boulevard_los_proceres_s5, boulevard_los_proceres_s3).
+
+% uniones
+conecta(boulevard_los_proceres_s1,boulevard_altamira_s1).
+conecta(boulevard_los_proceres_s5,boulevard_monsenor_romero_s1).
+conecta(boulevard_los_proceres_s5,boulevard_monsenor_romero_s2).
+
+%% Boulevard Monsenor Romero
+conecta(boulevard_monsenor_romero_s1,boulevard_monsenor_romero_s4).
+conecta(boulevard_monsenor_romero_s1,boulevard_monsenor_romero_s2).
+conecta(boulevard_monsenor_romero_s2,boulevard_monsenor_romero_s3).
+
+% uniones 
+conecta(boulevard_monsenor_romero_s1,carretera_panamericana_s2).
+
+%% Boulevard Altamira, Viveros y Estadi
+conecta(boulevard_altamira_s1,calle_los_viveros_s1).
+conecta(calle_los_viveros_s1,calle_los_estadi_s1).
+conecta(calle_los_estadi_s1,boulevard_los_proceres_s1).
+
+%% Calle Antigua Ferrocaril
+conecta(calle_antigua_ferrocaril_s1,calle_antigua_ferrocaril_s2).
+conecta(calle_antigua_ferrocaril_s2,calle_antigua_ferrocaril_s1).
+
+%% Calle San Jeronimo Emiliani
+conecta(calle_san_jeronimo_emiliani_s1,calle_antigua_ferrocaril_s1).
+conecta(calle_mediterraneo_s14,calle_san_jeronimo_emiliani_s1).
+
+%% Calle las Azucenas
+conecta(calle_las_azucenas_s1,calle_antigua_ferrocaril_s1).
+conecta(calle_las_azucenas_s1,avenida_las_palmeras_s1).
+
+conecta(calle_antigua_ferrocaril_s1,calle_las_azucenas_s1).
+conecta(avenida_las_palmeras_s1,calle_las_azucenas_s1).
+
