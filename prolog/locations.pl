@@ -361,7 +361,7 @@ conecta(avenida_las_palmeras_s1, calle_mediterraneo_s12).
 conecta(calle_mediterraneo_s15,carretera_panamericana_s3).
 conecta(carretera_panamericana_s3,calle_mediterraneo_s16).
 
-conecta(calle_mediterraneo_s12.boulevard_la_sultana_s1).
+conecta(calle_mediterraneo_s12,boulevard_la_sultana_s1).
 conecta(boulevard_la_sultana_s1, calle_mediterraneo_s12).
 
 %% Avenida Albert Einstein
@@ -378,3 +378,18 @@ conecta(avenida_albert_einstein_s5, avenida_albert_einstein_s4).
 % uniones
 conecta(avenida_albert_einstein_s5,primera_calle_oriente_s1).
 conecta(primera_calle_oriente_s1, avenida_albert_einstein_s5).
+
+%% Boulevard La Sultana
+conecta(boulevard_la_sultana_s1, boulevard_la_sultana_s2).
+conecta(boulevard_la_sultana_s2, boulevard_la_sultana_s3).
+conecta(boulevard_la_sultana_s3, boulevard_la_sultana_s4).
+conecta(boulevard_la_sultana_s4, boulevard_la_sultana_s5).
+
+conecta(boulevard_la_sultana_s2, boulevard_la_sultana_s1).
+conecta(boulevard_la_sultana_s3, boulevard_la_sultana_s2).
+conecta(boulevard_la_sultana_s4, boulevard_la_sultana_s3).
+conecta(boulevard_la_sultana_s5, boulevard_la_sultana_s4).
+
+% uniones
+conecta(boulevard_la_sultana_s5,boulevard_los_proceres_s5).
+conecta(boulevard_los_proceres_s5, boulevard_la_sultana_s5).
