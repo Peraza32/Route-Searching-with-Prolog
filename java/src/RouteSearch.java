@@ -14,9 +14,15 @@ public class RouteSearch {
 		System.out.println("consult " + (q1.hasSolution() ? "succeeded" : "failed"));
 		System.out.println("");
 
-		Query q2 = new Query("ir_hacia", new Term[] { new Atom("calle"), new Atom("jardin") });
-		q2.hasSolution();
-		//System.out.println("ir_hacia(calle,jardin) is " + (q2.hasSolution() ? "provable" : "not provable"));
+		Variable Route = new Variable("Route");
+		Query q2 = new Query("ir_hacia", new Term[] { new Atom("sala"), new Atom("quiosco"), Route });
 
+		Map<String, Term>[] solution;
+
+		solution = q2.allSolutions();
+
+		for (int i = 0; i < solution.length; i++) {
+			System.out.println("Route = " + solution[i].get("Route"));
+		}
 	}
 }
