@@ -52,43 +52,88 @@ conecta_con(calle,cochera).
 %ir hacia
 %caso base
 
-ir_hacia(X, X, [X]):-
-    writeln("Ya estás en el lugar").
+ir_hacia(X,X):-
+    writeln("Ya estas en el lugar").
 
-ir_hacia(X, Y, Route):-
+ir_hacia(X,Y):-
     lugar(X),
     lugar(Y),
-    ir_hacia(X, Y, [X], Route).
+    conecta_con(X,Y).
 
-ir_hacia(X, _, _):-
+ir_hacia(X,_):-
     \+ lugar(X),
     writeln("Los lugares no existen :("),
     fail.
 
-ir_hacia(_, Y, _):-
-    \+ lugar(Y),
+ir_hacia(_,X):-
+    \+ lugar(X),
     writeln("Los lugares no existen :("),
     fail.
 
-ir_hacia(X, Y, Acc, Route):-
+
+ir_hacia(X, Y):-
     abolish(eslabon, 1),
     assert(eslabon(X)),
-    ir_hacia2(X, Y, Acc, Route).
+    ir_hacia2(X, Y),
+    writeln(X).
 
-ir_hacia2(X, Y, Acc, Route):-
+ir_hacia2(X, Y):-
     conecta_con(X, Y),
-    reverse([Y|Acc], Route),
+    writeln(Y),
     assert(eslabon(Y)),
     !.
 
-ir_hacia2(X, _, _, _):-
+ir_hacia2(X, _):-
     conecta_con(X, Z),
     eslabon(Z),
     fail.
 
-ir_hacia2(X, Y, Acc, Route):-
+ir_hacia2(X, Y):-
     conecta_con(X, Z),
-    not(eslabon(Z)),
-    assert(eslabon(Z)),
-    ir_hacia2(Z, Y, [Z|Acc], Route),
+    not(eslabon(Z)), %verifica si no es un esalabon
+    assert(eslabon(Z)), %si no es eslabon lo ingresa a la memoria
+    ir_hacia2(Z, Y),
+    writeln(Z),
     !.
+
+
+% ______________________________________________________________
+% objetos RODRI
+objeto(pantunflas).
+objeto(flores).
+objeto(pisto).
+objeto(agua).
+objeto(limones).
+objeto(papel_higienico).
+objeto(triple_X).
+
+%____________________________________________________________-_
+%Relacion esta_en/2
+%
+esta_en(pantunflas,cuarto_rodri).
+esta_en(flores,jardin).
+esta_en(pisto,cuarto_papas).
+esta_en(agua,cocina).
+esta_en(limones,jardin).
+esta_en(papel_higienico,banio).
+esta_en(triple_X,quiosco).
+
+%Relacion traer/2
+traer(X,_):-
+    \+ lugar(X),
+    writeln("El lugar no existe"),
+    !,fail.
+
+traer(_,X):-
+    \+ objeto(X),
+    writeln("El objeto no existe"),
+    !,fail.
+
+
+traer(X,Y):-
+    lugar(X),
+    objeto(Y),
+    esta_en(Y,Z),
+    ir_hacia(X,Z),
+    writeln("________________"),
+    ir_hacia(Z,X).
