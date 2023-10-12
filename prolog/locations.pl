@@ -549,3 +549,47 @@ conecta(calle_las_azucenas_s1,avenida_las_palmeras_s1).
 conecta(calle_antigua_ferrocaril_s1,calle_las_azucenas_s1).
 conecta(avenida_las_palmeras_s1,calle_las_azucenas_s1).
 
+%% Codigo para calculo de ruta
+
+%caso base
+
+ir_hacia(X, X, [X]):-
+    writeln("Ya est�s en el lugar").
+
+ir_hacia(X, Y, Route):-
+    lugar(X),
+    lugar(Y),
+    ir_hacia(X, Y, [X], Route).
+
+ir_hacia(X, _, _):-
+    \+ lugar(X),
+    writeln("Los lugares no existen :("),
+    fail.
+
+ir_hacia(_, Y, _):-
+    \+ lugar(Y),
+    writeln("Los lugares no existen :("),
+    fail.
+
+ir_hacia(X, Y, Acc, Route):-
+    abolish(eslabon, 1),
+    assert(eslabon(X)),
+    ir_hacia2(X, Y, Acc, Route).
+
+ir_hacia2(X, Y, Acc, Route):-
+    conecta(X, Y),
+    reverse([Y|Acc], Route),
+    assert(eslabon(Y)),
+    !.
+
+ir_hacia2(X, _, _, _):-
+    conecta(X, Z),
+    eslabon(Z),
+    fail.
+
+ir_hacia2(X, Y, Acc, Route):-
+    conecta(X, Z),
+    not(eslabon(Z)),
+    assert(eslabon(Z)),
+    ir_hacia2(Z, Y, [Z|Acc], Route),
+    !.
