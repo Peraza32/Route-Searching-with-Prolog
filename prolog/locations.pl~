@@ -10,7 +10,7 @@ lugar(colegio_augusto_walte).
 lugar(instituto_salvadoreno_del_seguro_social).
 lugar(centro_dental_la_sultana).
 lugar(analiza_laboratio_clinico).
-lugar(bioinnova).
+lugar(bioinova).
 lugar(cruz_verde_antiguo_cuscatlan).
 
 % Gasolineras
@@ -219,9 +219,9 @@ conecta(calle_las_azucenas_s1, centro_dental_la_sultana).
 conecta(analiza_laboratorio_clinico, carretera_panamericana_s5).
 conecta(carretera_panamericana_s5, analiza_laboratorio_clinico).
 
-% Bioinnova
-conecta(bioinnova, avenida_las_palmeras_s1).
-conecta(avenida_las_palmeras_s1, bioinnova).
+% Bioinova
+conecta(bioinova, avenida_las_palmeras_s1).
+conecta(avenida_las_palmeras_s1, bioinova).
 
 %% Cruz Verde Antiguo Cuscatlan
 conecta(cruz_verde_antiguo_cuscatlan, tercera_avenida_norte_s3).
