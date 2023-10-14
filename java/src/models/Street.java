@@ -9,7 +9,7 @@ public class Street {
 	private String name;
 	// Breakpoints on the street
 	private List<Coordinates> breakPoints = new ArrayList<Coordinates>();
-	
+
 	// Constructor
 	public Street(String name, List<Coordinates> breakPoints) {
 		super();
@@ -45,19 +45,18 @@ public class Street {
 	public void setBreakPoints(List<Coordinates> breakPoints) {
 		this.breakPoints = breakPoints;
 	}
-	
-	
+
 	public List<Coordinates> getSegment(int segment) {
-	    List<Coordinates> segmentCoordinates = new ArrayList<Coordinates>();
+		List<Coordinates> segmentCoordinates = new ArrayList<Coordinates>();
 
-	    if (segment >= 0 && segment < this.breakPoints.size() - 1) {
-	        segmentCoordinates.add(this.breakPoints.get(segment - 1));
-	        segmentCoordinates.add(this.breakPoints.get(segment));
-	    } else {
-	        return null;
-	    }
+		if (segment >= 0 && segment < this.breakPoints.size() - 1) {
+			segmentCoordinates.add(this.breakPoints.get(segment - 1));
+			segmentCoordinates.add(this.breakPoints.get(segment));
+		} else {
+			return null;
+		}
 
-	    return segmentCoordinates;
+		return segmentCoordinates;
 	}
-	
+
 }
