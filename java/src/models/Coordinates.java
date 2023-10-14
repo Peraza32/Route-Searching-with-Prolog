@@ -1,7 +1,7 @@
 package models;
 // Class to define the coordinates for each break point on every street
 
-class Coordinates {
+public class Coordinates {
 	// Points in space
 	protected int x;
 	protected int y;

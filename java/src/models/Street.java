@@ -51,8 +51,8 @@ public class Street {
 	    List<Coordinates> segmentCoordinates = new ArrayList<Coordinates>();
 
 	    if (segment >= 0 && segment < this.breakPoints.size() - 1) {
+	        segmentCoordinates.add(this.breakPoints.get(segment - 1));
 	        segmentCoordinates.add(this.breakPoints.get(segment));
-	        segmentCoordinates.add(this.breakPoints.get(segment + 1));
 	    } else {
 	        return null;
 	    }
