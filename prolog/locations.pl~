@@ -600,4 +600,8 @@ calle_coordenada_x(Calle,  X, _) :-
 calle_coordenada_y(Calle, _, Y) :-
     calles(Calle, _, Y).
 
+calle_coordenadas(Calle, List) :-
+    calle_coordenada_x(Calle, X, _),
+    calle_coordenada_y(Calle, _, Y),
+    List = X, Y.
 
