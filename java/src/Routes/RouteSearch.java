@@ -13,20 +13,28 @@ public class RouteSearch {
 	private static RegexToList regex = new RegexToList();
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-		route = searchRoute.getRoute("uca", "multiplaza");
-		formattedStreets = regex.splitSentencesByComma(route.get(0));
+		System.out.println(getStreets("uca", "escuela_alemana"));
 		
-		// Iterar sobre el arreglo y asignar valores a cada elemento
-	    for (int i = 0; i < formattedStreets.size(); i++) {
-	    	String pivot = searchRoute.getStreetsCoordinates(formattedStreets.get(i));
-	    	stringOfCoordinates.add(pivot);
-	    }
-	    
-	    formattedCoordinates = regex.create2DListFromStrings(stringOfCoordinates);
-	    
-	    System.out.println(formattedCoordinates.toString());
+		System.out.println(getStreetsCoordinates(getStreets("uca", "multiplaza")));
+	}
+
+	// This method returns the streets that are gonna be used to ge to the
+	// destination
+	private static List<String> getStreets(String from, String where) {
+		route = searchRoute.getRoute(from, where);
+		formattedStreets = regex.splitSentencesByComma(route.get(0));
+		return formattedStreets;
+	}
+
+	// This methos takes a list of formatted streets
+	private static List<List<String>> getStreetsCoordinates(List<String> streets) {
+		for (int i = 0; i < formattedStreets.size(); i++) {
+			String pivot = searchRoute.getStreetsCoordinates(formattedStreets.get(i));
+			stringOfCoordinates.add(pivot);
+		}
+
+		formattedCoordinates = regex.create2DListFromStrings(stringOfCoordinates);
+		return formattedCoordinates;
 	}
 
 }
