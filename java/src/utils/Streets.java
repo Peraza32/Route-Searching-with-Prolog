@@ -57,6 +57,27 @@ public class Streets {
 		List<List<Coordinates>> streetCoordinates = new ArrayList<>();
 		// Define the coordinates for each street
 		streetCoordinates.add(List.of(new Coordinates(0, 0)));
+		streetCoordinates.add(List.of(new Coordinates(0, 0)));
+		streetCoordinates.add(List.of(new Coordinates(0, 0)));
+		streetCoordinates.add(List.of(new Coordinates(0, 0)));
+		streetCoordinates.add(List.of(new Coordinates(0, 0)));
+		streetCoordinates.add(List.of(new Coordinates(0, 0)));
+		streetCoordinates.add(List.of(new Coordinates(0, 0)));
+		streetCoordinates.add(List.of(new Coordinates(0, 0)));
+		streetCoordinates.add(List.of(new Coordinates(0, 0)));
+		streetCoordinates.add(List.of(new Coordinates(0, 0)));
+		streetCoordinates.add(List.of(new Coordinates(0, 0)));
+		streetCoordinates.add(List.of(new Coordinates(0, 0)));
+		streetCoordinates.add(List.of(new Coordinates(0, 0)));
+		streetCoordinates.add(List.of(new Coordinates(0, 0)));
+		streetCoordinates.add(List.of(new Coordinates(0, 0)));
+		streetCoordinates.add(List.of(new Coordinates(0, 0)));
+		streetCoordinates.add(List.of(new Coordinates(0, 0)));
+		streetCoordinates.add(List.of(new Coordinates(0, 0)));
+		streetCoordinates.add(List.of(new Coordinates(0, 0)));
+		streetCoordinates.add(List.of(new Coordinates(0, 0)));
+		streetCoordinates.add(List.of(new Coordinates(0, 0)));
+		streetCoordinates.add(List.of(new Coordinates(0, 0)));
 
 		// Create Street objects based on the names and coordinates
 		for (int i = 0; i < streetNames.length; i++) {

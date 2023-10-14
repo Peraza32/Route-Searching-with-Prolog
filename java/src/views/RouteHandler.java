@@ -8,8 +8,11 @@ import javax.swing.border.EmptyBorder;
 
 import models.Coordinates;
 import utils.Painting;
+import utils.Places;
+import utils.Streets;
 
 import javax.swing.JLabel;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
 import java.awt.Font;
@@ -25,7 +28,8 @@ public class RouteHandler extends JFrame {
     private JPanel contentPane;
     private final int IMAGE_WIDTH = 903;
     private final int IMAGE_HEIGHT = 497;
-    private final int ANIMATION_STEPS = 12;
+    private final int ANIMATION_STEPS = 10;
+    private final Places placesInstance = Places.getInstance();
     private Painting paintingPanel;
 
     /**
@@ -73,18 +77,21 @@ public class RouteHandler extends JFrame {
         lblFromLabel.setFont(new Font("Consolas", Font.BOLD, 14));
         lblFromLabel.setBounds(10, 526, 69, 26);
         contentPane.add(lblFromLabel);
+        
+        DefaultComboBoxModel<String> fromComboBoxModel = new DefaultComboBoxModel<>(placesInstance.getPlaceNames());
+        DefaultComboBoxModel<String> whereComboBoxModel = new DefaultComboBoxModel<>(placesInstance.getPlaceNames());
 
-        JComboBox<?> cmbFrom = new JComboBox<Object>();
-        cmbFrom.setBounds(89, 525, 191, 26);
+        JComboBox<String> cmbFrom = new JComboBox<String>(fromComboBoxModel);
+        cmbFrom.setBounds(89, 525, 245, 26);
         contentPane.add(cmbFrom);
 
-        JComboBox<?> cmbWhere = new JComboBox<Object>();
-        cmbWhere.setBounds(384, 525, 191, 26);
+        JComboBox<String> cmbWhere = new JComboBox<String>(whereComboBoxModel);
+        cmbWhere.setBounds(423, 525, 245, 26);
         contentPane.add(cmbWhere);
 
         JLabel lblWhereLabel = new JLabel("Destino");
         lblWhereLabel.setFont(new Font("Consolas", Font.BOLD, 14));
-        lblWhereLabel.setBounds(305, 526, 69, 26);
+        lblWhereLabel.setBounds(344, 526, 69, 26);
         contentPane.add(lblWhereLabel);
 
         // Create the painting panel
@@ -98,9 +105,9 @@ public class RouteHandler extends JFrame {
 
         btnShowRoute.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                paintSegment(new Coordinates(141, 303), new Coordinates(449, 178), ANIMATION_STEPS);
+                paintRoute((String) cmbFrom.getSelectedItem(), (String) cmbWhere.getSelectedItem());
             }
-        });
+        });	
     }
 
     private ImageIcon resizeImage(String path) {
@@ -109,5 +116,12 @@ public class RouteHandler extends JFrame {
 
     private void paintSegment(Coordinates A, Coordinates B, int animationSteps) {
         paintingPanel.paintSegment(A, B, animationSteps);
+    }
+    
+    private void paintRoute(String from, String where) {
+    	if(placesInstance.isValidPlace(where) && placesInstance.isValidPlace(from) && from != where) {
+    		System.out.println(from + " -> " + where);
+    		paintSegment(new Coordinates(660,274), new Coordinates(199,330), ANIMATION_STEPS);
+    	}
     }
 }
