@@ -8,55 +8,43 @@ public class Street {
 	// Name of the street
 	private String name;
 	// Breakpoints on the street
-	private List<Coordinates> breakPoints = new ArrayList<Coordinates>();
+	private List<Segment> streetSegments = new ArrayList<Segment>();
 
 	// Constructor
-	public Street(String name, List<Coordinates> breakPoints) {
+	public Street(String name, List<Segment> breakPoints) {
 		super();
 		this.name = name;
-		this.breakPoints = breakPoints;
+		this.streetSegments = breakPoints;
 	}
 
-	// Setters and Getters
 	/**
-	 * @return the name of the street
+	 * @return the name
 	 */
 	public String getName() {
 		return name;
 	}
 
 	/**
-	 * @param name the name of the street to set
+	 * @param name the name to set
 	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
 	/**
-	 * @return Street breakPoints as list
+	 * @return the streetSegments
 	 */
-	public List<Coordinates> getBreakPoints() {
-		return breakPoints;
+	public List<Segment> getStreetSegments() {
+		return streetSegments;
 	}
 
 	/**
-	 * @param breakPoints the breakPoints to set
+	 * @param streetSegments the streetSegments to set
 	 */
-	public void setBreakPoints(List<Coordinates> breakPoints) {
-		this.breakPoints = breakPoints;
+	public void setStreetSegments(List<Segment> streetSegments) {
+		this.streetSegments = streetSegments;
 	}
 
-	public List<Coordinates> getSegment(int segment) {
-		List<Coordinates> segmentCoordinates = new ArrayList<Coordinates>();
-
-		if (segment >= 0 && segment < this.breakPoints.size() - 1) {
-			segmentCoordinates.add(this.breakPoints.get(segment - 1));
-			segmentCoordinates.add(this.breakPoints.get(segment));
-		} else {
-			return null;
-		}
-
-		return segmentCoordinates;
-	}
-
+	// Setters and Getters
+	
 }
