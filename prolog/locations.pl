@@ -262,8 +262,8 @@ conecta(parque_bicentenario,boulevard_monsenor_romero_s4).
 conecta(boulevard_monsenor_romero_s4, parque_bicentenario).
 
 %% Parque Central Antiguo Cuscatlan
-conecta(parque_central_antiguo_cuscatlan, tercera_avenida_norte_s3).
-conecta(tercera_avenida_norte_s3, parque_central_antiguo_cuscatlan).
+% conecta(parque_central_antiguo_cuscatlan, tercera_avenida_norte_s3).
+% conecta(tercera_avenida_norte_s3, parque_central_antiguo_cuscatlan).
 conecta(parque_central_antiguo_cuscatlan, boulevard_walter_thilo_deininger_s1).
 conecta(boulevard_walter_thilo_deininger_s1, parque_central_antiguo_cuscatlan).
 
@@ -307,8 +307,7 @@ conecta(calle_cantabrico_s4, calle_cantabrico_s3).
 conecta(calle_cantabrico_s5, calle_cantabrico_s4).
 
 % uniones
-conecta(calle_cantabrico_s1, calle_mediterraneo_s5).
-conecta(calle_mediterraneo_s5, calle_cantabrico_s1).
+
 
 conecta(calle_cantabrico_s6, calle_mediterraneo_s4).
 conecta(calle_mediterraneo_s4, calle_cantabrico_s6).
@@ -474,10 +473,12 @@ conecta(boulevard_walter_thilo_deininger_s7, boulevard_walter_thilo_deininger_s5
 % uniones
 conecta(boulevard_walter_thilo_deininger_s5, calle_antigua_ferrocaril_s2).
 conecta(calle_antigua_ferrocaril_s2, boulevard_walter_thilo_deininger_s5).
+conecta(boulevard_walter_thilo_deininger_s1, primera_avenida_norte_s1).
 
 conecta(boulevard_walter_thilo_deininger_s7, carretera_panamericana_s3).
 
 %% Calle Cuscatlan Poniente
+
 
 %% Carretera Panamericana
 % un solo sentido
@@ -605,3 +606,28 @@ calle_coordenadas(Calle, List) :-
     calle_coordenada_y(Calle, _, Y),
     List = [X, Y].
 
+
+ir_hacia(X,Y):-
+    abolish(nodo, 1),
+    assert(nodo(X)),
+    ir_hacia_2(X, Y),
+    writeln(X).
+
+ir_hacia_2(X,Y):-
+    conecta(X, Y),
+    writeln(Y),
+    assert(nodo(Y)),
+    !.
+
+ir_hacia_2(X,_):-
+    conecta(X, Z),
+    nodo(Z),
+    fail. 
+
+ir_hacia_2(X, Y):-
+    conecta(X, Z),
+    not(nodo(Z)),
+    assert(nodo(Z)),
+    ir_hacia_2(Z, Y),
+    writeln(Z),
+    !.
