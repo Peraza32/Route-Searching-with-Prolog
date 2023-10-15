@@ -12,6 +12,7 @@ import models.Segment;
 import models.Street;
 import utils.Painting;
 import utils.Places;
+import utils.SegmentExtractor;
 import utils.Streets;
 
 import javax.swing.JLabel;
@@ -37,12 +38,14 @@ public class RouteHandler extends JFrame {
 	private final int IMAGE_WIDTH = 1680;
 	private final int IMAGE_HEIGHT = 700;
 	private final int ANIMATION_STEPS = 10;
+
 	private final Places placesInstance = Places.getInstance();
 	private final Streets streetsInstance = Streets.getInstance();
-	private final List<Street> ALL_STREETS = streetsInstance.getContent();
-    private Queue<Segment> segmentQueue = new LinkedList<>();
+	private final SegmentExtractor extractor = new SegmentExtractor();
+
+	private Queue<Segment> segmentQueue = new LinkedList<>();
 	private Painting paintingPanel;
-	
+
 	private PrologConsult PrologConsult = new PrologConsult();
 
 	/**
@@ -104,7 +107,7 @@ public class RouteHandler extends JFrame {
 		mapImage.setIcon(resizeImage("src/resources/full-map.png"));
 		mapImage.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-				
+
 			}
 		});
 		contentPane.add(mapImage);
@@ -113,75 +116,56 @@ public class RouteHandler extends JFrame {
 		paintingPanel = new Painting(resizeImage("src/resources/full-map.png"));
 		paintingPanel.setBounds(10, 11, IMAGE_WIDTH, IMAGE_HEIGHT);
 		contentPane.add(paintingPanel);
-		
-			btnShowRoute.addActionListener(new ActionListener() {
-	            public void actionPerformed(ActionEvent e) {
-	            	
-	            	
-	            	String startingPoint = (String) cmbFrom.getSelectedItem();
-	            	String goal = (String) cmbWhere.getSelectedItem();
-	            	
-	            	if(placesInstance.isValidPlace(startingPoint) && placesInstance.isValidPlace(goal) && startingPoint != goal) { 
-	            		
-	            		List<String> routeToFollow = PrologConsult.getRoute(startingPoint, goal);
-	            		System.out.println(routeToFollow);
-	            		
-	            	}
-	            	
-	            	
-	                // Clear the queue before adding new segments
-	            		
 
-	                // Add segments to the queue
-	                /*for (Street street : ALL_STREETS) {
-	                	for (Segment segment : street.getStreetSegments()) {
-	                		segmentQueue.add(segment);
-						}
-					}*/
-	                // Start painting the segments
-	                
-	            }
-	        });
-				
-				// TODO: SEND PLACES TO PROLOG AND RECEIVE THE STREETS ARRAY
-				// TODO: PARSE STREETS WITH ITS SEGMENT AND PAINT EACH SEGMENT
-				
-				// (String) cmbFrom.getSelectedItem(), (String) cmbWhere.getSelectedItem()   ----> Getting from and to place's names
-					
-			
+		btnShowRoute.addActionListener(e -> {
+		    segmentQueue.clear();
+		    String startingPoint = (String) cmbFrom.getSelectedItem();
+		    String goal = (String) cmbWhere.getSelectedItem();
+
+		    if (!placesInstance.isValidPlace(startingPoint) || !placesInstance.isValidPlace(goal) || startingPoint.equals(goal)) return;
+
+		    List<String> routeToFollow = PrologConsult.getRoute(startingPoint, goal);
+
+		    for (String street : routeToFollow) {
+		        String name = extractor.extractName(street);
+		        String segmentNumber = extractor.extractNumber(street);
+
+		        if (segmentNumber == null) continue;
+
+		        Street foundStreet = streetsInstance.findStreetByName(name);
+		        if (foundStreet != null) {
+		            Segment foundSegment = foundStreet.getStreetSegment(Integer.parseInt(segmentNumber));
+		            segmentQueue.add(foundSegment);
+		        }
+		    }
+
+		    startPainting();
+		});
+
+
 	}
-	
+
 	private void startPainting() {
-        if (!segmentQueue.isEmpty()){
-            Segment segment = segmentQueue.poll();
-            paintSegment(segment.getStart(), segment.getFinish());
-        }
-    }
+		if (!segmentQueue.isEmpty()) {
+			Segment segment = segmentQueue.poll();
+			paintSegment(segment.getStart(), segment.getFinish());
+		}
+	}
 
 	private void paintSegment(Coordinates A, Coordinates B) {
-	    Segment segment = new Segment(A, B); // Create a Segment object
-	    paintingPanel.paintSegment(segment, ANIMATION_STEPS, new ActionListener() {
-	        @Override
-	        public void actionPerformed(ActionEvent e) {
-	            // Continue with the next segment after the animation is complete
-	            startPainting();
-	        }
-	    });
+		Segment segment = new Segment(A, B); // Create a Segment object
+		paintingPanel.paintSegment(segment, ANIMATION_STEPS, new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// Continue with the next segment after the animation is complete
+				startPainting();
+			}
+		});
 	}
-
 
 	private ImageIcon resizeImage(String path) {
 		return new ImageIcon(new ImageIcon(path).getImage().getScaledInstance(IMAGE_WIDTH, IMAGE_HEIGHT,
 				java.awt.Image.SCALE_SMOOTH));
 	}
 
-	private void paintRoute() {
-		segmentQueue.clear();
-		/*
-		 * if(placesInstance.isValidPlace(where) && placesInstance.isValidPlace(from) &&
-		 * from != where) { System.out.println(from + " -> " + where); paintSegment(new
-		 * Coordinates(660,274), new Coordinates(199,330)); }
-		 */
-		startPainting();
-	}
 }

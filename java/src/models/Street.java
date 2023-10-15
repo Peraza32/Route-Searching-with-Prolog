@@ -30,7 +30,14 @@ public class Street {
 	public void setName(String name) {
 		this.name = name;
 	}
-
+	
+	/**
+	 * @return the streetSegments
+	 */
+	public Segment getStreetSegment(int segment) {
+		return this.streetSegments.get(segment-1);
+	}
+	
 	/**
 	 * @return the streetSegments
 	 */

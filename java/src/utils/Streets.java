@@ -38,6 +38,15 @@ public class Streets {
 	private Streets() {
 		fillList();
 	}
+	
+	public Street findStreetByName(String name) {
+        for (Street street : content) {
+            if (street.getName().equals(name)) {
+                return street;
+            }
+        }
+        return null; // Street not found
+    }
 
 	public static Streets getInstance() {
 		if (instance == null) {
