@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import Routes.PrologConsult;
 import models.Coordinates;
 import models.Segment;
 import models.Street;
@@ -35,12 +36,14 @@ public class RouteHandler extends JFrame {
 	private JPanel contentPane;
 	private final int IMAGE_WIDTH = 1680;
 	private final int IMAGE_HEIGHT = 700;
-	private final int ANIMATION_STEPS = 2;
+	private final int ANIMATION_STEPS = 10;
 	private final Places placesInstance = Places.getInstance();
 	private final Streets streetsInstance = Streets.getInstance();
 	private final List<Street> ALL_STREETS = streetsInstance.getContent();
     private Queue<Segment> segmentQueue = new LinkedList<>();
 	private Painting paintingPanel;
+	
+	private PrologConsult PrologConsult = new PrologConsult();
 
 	/**
 	 * Launch the application.
@@ -113,21 +116,30 @@ public class RouteHandler extends JFrame {
 		
 			btnShowRoute.addActionListener(new ActionListener() {
 	            public void actionPerformed(ActionEvent e) {
+	            	
+	            	
+	            	String startingPoint = (String) cmbFrom.getSelectedItem();
+	            	String goal = (String) cmbWhere.getSelectedItem();
+	            	
+	            	if(placesInstance.isValidPlace(startingPoint) && placesInstance.isValidPlace(goal) && startingPoint != goal) { 
+	            		
+	            		List<String> routeToFollow = PrologConsult.getRoute(startingPoint, goal);
+	            		System.out.println(routeToFollow);
+	            		
+	            	}
+	            	
+	            	
 	                // Clear the queue before adding new segments
-	                segmentQueue.clear();
+	            		
 
 	                // Add segments to the queue
-	                for (Street street : ALL_STREETS) {
+	                /*for (Street street : ALL_STREETS) {
 	                	for (Segment segment : street.getStreetSegments()) {
 	                		segmentQueue.add(segment);
 						}
-					}
-	                
-	                // segmentQueue.add(ALL_STREETS.get(21).getStreetSegments().get(0));
-	                // segmentQueue.add(ALL_STREETS.get(20).getStreetSegments().get(0));
-
+					}*/
 	                // Start painting the segments
-	                startPainting();
+	                
 	            }
 	        });
 				
@@ -164,11 +176,12 @@ public class RouteHandler extends JFrame {
 	}
 
 	private void paintRoute() {
-		
+		segmentQueue.clear();
 		/*
 		 * if(placesInstance.isValidPlace(where) && placesInstance.isValidPlace(from) &&
 		 * from != where) { System.out.println(from + " -> " + where); paintSegment(new
 		 * Coordinates(660,274), new Coordinates(199,330)); }
 		 */
+		startPainting();
 	}
 }
