@@ -11,13 +11,13 @@ public class PrologConsult {
 		Query q1 = new Query("consult",
 				// Change with your route for the locations.pl file
 				new Term[] { new Atom(
-						"C:\\Users\\gilbe\\Desktop\\UCA\\ciclo-02-2023\\programacion-declarativa\\primer-proyecto\\Route-Searching-with-Prolog\\prolog\\locations.pl") });
+						"src/resources/locations.pl") });
 
 		System.out.println("consult " + from + " " + (q1.hasSolution() ? "succeeded" : "failed"));
 		System.out.println("");
 	}
 
-	public List<String> getRoute(String from, String where) {
+	public String getRoute(String from, String where) {
 
 		List<String> routeList = new ArrayList<String>();
 
@@ -35,10 +35,10 @@ public class PrologConsult {
 				routeList.add(solution[i].get("Route").toString());
 			}
 
-			return routeList;
+			return routeList.get(0);
 		} else {
 			routeList.add(null);
-			return routeList;
+			return routeList.get(0);
 		}
 
 	}

@@ -4,7 +4,7 @@ import java.util.*;
 
 public class RouteSearch {
 
-	private static List<String> route = new ArrayList<String>();
+	private static String route;
 	private static List<String> formattedStreets = new ArrayList<String>();
 	private static List<String> stringOfCoordinates = new ArrayList<String>();
 	private static List<List<String>> formattedCoordinates = new ArrayList<List<String>>();
@@ -22,7 +22,7 @@ public class RouteSearch {
 	// destination
 	private static List<String> getStreets(String from, String where) {
 		route = searchRoute.getRoute(from, where);
-		formattedStreets = regex.splitSentencesByComma(route.get(0));
+		formattedStreets = regex.splitSentencesByComma(route);
 		return formattedStreets;
 	}
 

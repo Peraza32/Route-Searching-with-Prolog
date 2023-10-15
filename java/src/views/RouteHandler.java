@@ -124,25 +124,35 @@ public class RouteHandler extends JFrame {
 
 		    if (!placesInstance.isValidPlace(startingPoint) || !placesInstance.isValidPlace(goal) || startingPoint.equals(goal)) return;
 
-		    List<String> routeToFollow = PrologConsult.getRoute(startingPoint, goal);
-
-		    for (String street : routeToFollow) {
+		    String route = PrologConsult.getRoute(startingPoint, goal);
+		    System.out.println(route);
+		    
+		    List<String> routeAsList =  extractor.splitSentencesByComma(route);
+		    // for (String string : routeAsList) System.out.println(string);
+					    		    
+		    for (String street : routeAsList) {
 		        String name = extractor.extractName(street);
 		        String segmentNumber = extractor.extractNumber(street);
-
+		        
+		   
 		        if (segmentNumber == null) continue;
 
 		        Street foundStreet = streetsInstance.findStreetByName(name);
+		        
+		        
+		        
+		        
+		        
 		        if (foundStreet != null) {
-		            Segment foundSegment = foundStreet.getStreetSegment(Integer.parseInt(segmentNumber));
+		            Segment foundSegment = foundStreet.getStreetSegment(Integer.parseInt(segmentNumber));		            
 		            segmentQueue.add(foundSegment);
 		        }
 		    }
 
 		    startPainting();
-		});
+		});	
 
-
+		
 	}
 
 	private void startPainting() {
