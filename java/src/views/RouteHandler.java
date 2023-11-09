@@ -106,10 +106,14 @@ public class RouteHandler extends JFrame {
 		mapImage.setBounds(10, 11, IMAGE_WIDTH, IMAGE_HEIGHT);
 		mapImage.setIcon(resizeImage("src/resources/full-map.png"));
 		mapImage.addMouseListener(new MouseAdapter() {
-			public void mouseClicked(MouseEvent e) {
+		    public void mouseClicked(MouseEvent e) {
+		        int x = e.getX(); // Get the X coordinate of the mouse click
+		        int y = e.getY(); // Get the Y coordinate of the mouse click
 
-			}
+		        System.out.println("Mouse Click Coordinates: X=" + x + ", Y=" + y);
+		    }
 		});
+
 		contentPane.add(mapImage);
 
 		// Create the painting panel
@@ -119,6 +123,12 @@ public class RouteHandler extends JFrame {
 
 		btnShowRoute.addActionListener(e -> {
 		    segmentQueue.clear();
+		    List<Segment> segmentsList = paintingPanel.getSegmentsToDraw();
+		    segmentsList.clear();
+		    paintingPanel.setSegmentsToDraw(segmentsList);
+		    paintingPanel.repaint(); // Clear the panel
+
+		    
 		    String startingPoint = (String) cmbFrom.getSelectedItem();
 		    String goal = (String) cmbWhere.getSelectedItem();
 

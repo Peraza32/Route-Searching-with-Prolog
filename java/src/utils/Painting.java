@@ -20,7 +20,24 @@ public class Painting extends JPanel {
     private Image backgroundImage;
     private ActionListener animationCompleteListener;
 
-    public Painting(ImageIcon imageIcon) {
+    
+    
+    
+    /**
+	 * @return the segmentsToDraw
+	 */
+	public List<Segment> getSegmentsToDraw() {
+		return segmentsToDraw;
+	}
+
+	/**
+	 * @param segmentsToDraw the segmentsToDraw to set
+	 */
+	public void setSegmentsToDraw(List<Segment> segmentsToDraw) {
+		this.segmentsToDraw = segmentsToDraw;
+	}
+
+	public Painting(ImageIcon imageIcon) {
         this.backgroundImage = imageIcon.getImage();
         currentStep = 0;
         animationSteps = 0;

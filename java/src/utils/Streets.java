@@ -76,7 +76,8 @@ public class Streets {
 			    new Segment(875, 408, 787, 383),
 			    new Segment(787, 383, 776, 386),
 			    new Segment(776, 386, 774, 396),
-			    new Segment(774, 396, 872, 421)
+			    new Segment(774, 396, 872, 421),
+			    new Segment(875, 408, 872, 426)
 			)); 
 		
 		// "calle_mediterraneo", 
@@ -178,7 +179,7 @@ public class Streets {
 			    new Segment(714, 204, 619, 226),   // Segment 1
 			    new Segment(659, 193, 619, 226),   // Segment 2
 			    new Segment(619, 226, 500, 323),   // Segment 3
-			    new Segment(364, 455, 500, 323),   // Segment 4
+			    new Segment(380, 443, 504, 327),   // Segment 4
 			    new Segment(500, 323, 386, 371),   // Segment 5
 			    new Segment(386, 371, 350, 380),   // Segment 6
 			    new Segment(307, 434, 361, 454),   // Segment 7

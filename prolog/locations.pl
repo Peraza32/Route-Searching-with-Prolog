@@ -526,6 +526,8 @@ conecta(boulevard_los_proceres_s5,boulevard_monsenor_romero_s2).
 conecta(boulevard_monsenor_romero_s1,boulevard_monsenor_romero_s4).
 conecta(boulevard_monsenor_romero_s1,boulevard_monsenor_romero_s2).
 conecta(boulevard_monsenor_romero_s2,boulevard_monsenor_romero_s3).
+conecta(boulevard_monsenor_romero_s3, boulevard_monsenor_romero_s1).
+
 
 % uniones
 conecta(boulevard_monsenor_romero_s1,carretera_panamericana_s2).
